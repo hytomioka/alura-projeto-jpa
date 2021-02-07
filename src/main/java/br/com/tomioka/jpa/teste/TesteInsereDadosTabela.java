@@ -1,0 +1,33 @@
+package br.com.tomioka.jpa.teste;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import br.com.tomioka.jpa.modelo.Conta;
+
+public class TesteInsereDadosTabela {
+	
+	public static void main(String[] args) {
+		
+		Conta novaConta = new Conta();
+		novaConta.setAgencia(2233);
+		novaConta.setConta(553322);
+		novaConta.setTitular("João Cardoso");
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
+		EntityManager em = emf.createEntityManager();
+		
+		// O objeto será persistido somente através de uma transação.
+		
+		em.getTransaction().begin();
+		
+		em.persist(novaConta);
+		
+		em.getTransaction().commit();
+		
+		
+		
+	}
+
+}
