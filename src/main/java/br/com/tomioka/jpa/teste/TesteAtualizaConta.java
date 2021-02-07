@@ -15,12 +15,18 @@ public class TesteAtualizaConta {
 		// Atualizar dados na tabela
 		Conta contaEscolhida = em.find(Conta.class, 1L);
 		
-		contaEscolhida.setSaldo(50.0);
-		
 		System.out.println("Conta atualizada: " + contaEscolhida.getTitular());
 		
+		/*
+		 * O método find, ou persist do EntityManager, retornam um objeto gerado que foi buscado no 
+		 * banco de dados. Posteriormente, o JPA e o Hibernate ainda mantêm uma referência a este
+		 * objeto gerado, ou seja, em estado MANAGED.
+		 * Isso permite que uma mudança no objeto, acarreta uma mudança no banco de dados.
+		 * 
+		 */
+		
 		em.getTransaction().begin();
-		em.persist(contaEscolhida);
+		contaEscolhida.setSaldo(100.0); // alteração do estado do modelo
 		em.getTransaction().commit();
 		
 		
