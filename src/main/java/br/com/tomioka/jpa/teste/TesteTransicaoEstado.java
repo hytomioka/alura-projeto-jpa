@@ -15,20 +15,20 @@ public class TesteTransicaoEstado {
 		
 		// Transient (o objeto Conta ainda não está sincronizado com o JPA)
 		Conta conta = new Conta();
-		conta.setAgencia(1114);
-		conta.setConta(111422);
-		conta.setTitular("Mario Souza");
-		conta.setSaldo(3000.0);
+		conta.setAgencia(2145);
+		conta.setConta(214522);
+		conta.setTitular("Vinicius Fernando");
+		conta.setSaldo(600.0);
 		
 		
 		em.getTransaction().begin();
 		// Transient -> Managed (o objeto Conta está sincronizado com o JPA)
 		em.persist(conta);
-		em.getTransaction().commit();
+		
 		
 		// Managed -> Removed (o objeto Conta foi removido do JPA, e consequentemente do banco de dados)
 		em.remove(conta);
-		
+		em.getTransaction().commit();
 		/*
 		 * Vale notar que os métodos dispostos pela interface do EntityManager não estão diretamente
 		 * relacionadas com o uso métodos SQL específico (e.g. SELECT, INSERT, DELETE), e sim com
