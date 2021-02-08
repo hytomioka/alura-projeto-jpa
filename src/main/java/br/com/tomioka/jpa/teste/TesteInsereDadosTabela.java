@@ -15,7 +15,7 @@ public class TesteInsereDadosTabela {
 		novaConta.setConta(553322);
 		novaConta.setTitular("João Cardoso");
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("tomioka");
 		EntityManager em = emf.createEntityManager();
 		
 		// O objeto será persistido somente através de uma transação.

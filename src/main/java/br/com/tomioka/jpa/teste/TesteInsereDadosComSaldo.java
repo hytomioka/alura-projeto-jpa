@@ -9,7 +9,7 @@ import br.com.tomioka.jpa.modelo.Conta;
 public class TesteInsereDadosComSaldo {
 
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("tomioka");
 		EntityManager em = emf.createEntityManager();
 		
 		Conta novaConta = new Conta();

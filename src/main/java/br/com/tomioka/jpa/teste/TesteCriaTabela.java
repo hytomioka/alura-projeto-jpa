@@ -8,7 +8,7 @@ public class TesteCriaTabela {
 
 	public static void main(String[] args) {
 		// Persistence acessa o arquivo persistence.xml
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("tomioka");
 		EntityManager createEntityManager = emf.createEntityManager();
 		emf.close();
 	}

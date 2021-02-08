@@ -10,7 +10,7 @@ public class TesteTransicaoEstado {
 
 	public static void main(String[] args) {
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("tomioka");
 		EntityManager em = emf.createEntityManager();
 		
 		// Transient (o objeto Conta ainda não está sincronizado com o JPA)
