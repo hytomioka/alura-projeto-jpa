@@ -7,6 +7,14 @@ import javax.persistence.Persistence;
 import br.com.tomioka.jpa.modelo.Cliente;
 import br.com.tomioka.jpa.modelo.Conta;
 
+
+/*
+ * Cardinalidade: princípio fundamental sobre o relacionamento de um banco de dados 
+ * relacional (Níveis de relacionamento: 1:1; 1:N; N:N).
+ * Link para informações mais detalhadas:
+ * https://pt.wikipedia.org/wiki/Cardinalidade_(modelagem_de_dados)
+ */
+
 public class TesteRelacionamentoClienteConta {
 
 	public static void main(String[] args) {

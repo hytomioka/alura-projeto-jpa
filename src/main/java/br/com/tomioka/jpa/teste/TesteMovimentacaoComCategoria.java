@@ -21,7 +21,7 @@ public class TesteMovimentacaoComCategoria {
 		Categoria cat2 = new Categoria("Restaurante");
 		
 		Conta conta = new Conta();
-		conta.setId(3L); // ou setId((long) 1)
+		conta.setId(1L); // ou setId((long) 1)
 		
 		Movimentacao mov1 = new Movimentacao();
 		mov1.setData(LocalDateTime.now());
@@ -45,8 +45,8 @@ public class TesteMovimentacaoComCategoria {
 		
 		em.getTransaction().begin();
 		
-//		em.persist(cat1);
-//		em.persist(cat2);
+		em.persist(cat1);
+		em.persist(cat2);
 		
 		em.persist(mov1);
 		em.persist(mov2);

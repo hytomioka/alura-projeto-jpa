@@ -32,7 +32,7 @@ public class Movimentacao {
 
 	/*
 	 * Mapeamento automático de chave estrangeira (Muitos para Um). A coluna de
-	 * chave estrangeira é utilizada nos relacionamento @*ToMany.
+	 * chave estrangeira é utilizada nos relacionamento @*ToOne.
 	 */
 	@ManyToOne
 	private Conta conta;

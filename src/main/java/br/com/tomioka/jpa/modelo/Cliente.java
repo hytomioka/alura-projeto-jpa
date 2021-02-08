@@ -16,8 +16,14 @@ public class Cliente {
 	private String nome;
 	private String profissao;
 	private String endereco;
-
-	@JoinColumn(unique = true) // um cliente não pode possuir contas duplicadas
+	
+	/*
+	 * Atributo não pode pussuir chave primárias duplicadas 
+	 * Funciona somente na criação do schema, ou seja, quando o banco for deletado e 
+	 * criado novamente.
+	 */
+	
+	@JoinColumn(unique = true)
 	@OneToOne
 	private Conta conta;
 	
