@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Conta {
@@ -12,9 +13,10 @@ public class Conta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // garante o uso dessa chave sequencial como auto-increment
 	private Long id;
 	private Integer agencia;
-	private Integer conta;
 	private String titular;
+	private Integer conta;
 	private Double saldo;
+	
 
 	public Double getSaldo() {
 		return saldo;

@@ -37,6 +37,8 @@ public class TesteMovimentacao {
 		em.persist(movimentacao);
 
 		em.getTransaction().commit();
+		
+		em.close();
 
 	}
 
