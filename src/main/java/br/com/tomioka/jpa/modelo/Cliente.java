@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,9 +17,18 @@ public class Cliente {
 	private String profissao;
 	private String endereco;
 
+	@JoinColumn(unique = true) // um cliente não pode possuir contas duplicadas
 	@OneToOne
 	private Conta conta;
 	
+	public Conta getConta() {
+		return conta;
+	}
+
+	public void setConta(Conta conta) {
+		this.conta = conta;
+	}
+
 	public Long getId() {
 		return id;
 	}
