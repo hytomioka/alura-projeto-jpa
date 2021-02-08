@@ -21,6 +21,11 @@ public class Categoria {
 	public Categoria() {
 	}
 	
+	@Override
+	public String toString() {
+		return id + " - " + descricao;
+	}
+
 	public Categoria(String descricao) {
 		this.descricao = descricao;
 	}
