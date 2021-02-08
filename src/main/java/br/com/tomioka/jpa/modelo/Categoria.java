@@ -16,6 +16,14 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String descricao;
+	
+	@Deprecated // Não deverá ser utilizado, construtor padrão será utilizado pelo Hibernate
+	public Categoria() {
+	}
+	
+	public Categoria(String descricao) {
+		this.descricao = descricao;
+	}
 
 	public Long getId() {
 		return id;

@@ -29,17 +29,22 @@ public class Movimentacao {
 
 	// BigDecimal é um tipo Double com maior precisão e exatidão
 	private BigDecimal valor;
-	
+
 	/*
-	 * Mapeamento automático de chave estrangeira (Muitos para Um).
-	 * A coluna de chave estrangeira é utilizada nos relacionamento @*ToMany.
+	 * Mapeamento automático de chave estrangeira (Muitos para Um). A coluna de
+	 * chave estrangeira é utilizada nos relacionamento @*ToMany.
 	 */
 	@ManyToOne
 	private Conta conta;
 	
+	
+	/* 
+	 * ManyToMany cria uma tabela de relacionamento entre as entidades relacionadas.
+	 * Neste caso, entre Movimentacao e Categoria. Há um padrão, a tabela de relacionamento
+	 * criada terá o nome de movimentacao_categoria. 
+	 */
 	@ManyToMany
 	private List<Categoria> categoria;
-	
 
 	public Conta getConta() {
 		return conta;
@@ -47,6 +52,14 @@ public class Movimentacao {
 
 	public void setConta(Conta conta) {
 		this.conta = conta;
+	}
+
+	public List<Categoria> getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(List<Categoria> categoria) {
+		this.categoria = categoria;
 	}
 
 	public Long getId() {
